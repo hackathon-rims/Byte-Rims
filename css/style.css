@@ -115,7 +115,7 @@ button:hover {
   bottom: 0;
   margin: auto;
   background-color: #f9f8fc;
-  border: 2.5px solid #0e172c;
+  border: 0px solid #0e172c;
   transition: background-color 2.2s;
   transition-duration: 3s;
   transition: 0.2s;
