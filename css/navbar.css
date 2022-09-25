@@ -87,7 +87,7 @@ body {
 
   .main-nav li a {
     border-radius: 10px;
-    background: radial-gradient(#3eadcf, #abe9cd);
+    background: white;
     color: rgba(0, 0, 0, 0.687);
     padding: 10px;
     font-size: 1.4rem;
