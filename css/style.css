@@ -94,7 +94,7 @@ body {
 
 button {
   border: none;
-  border-radius: 40px;
+  border-radius: 0px;
   box-shadow: 0 0 8px rgb(207, 207, 207);
 }
 
