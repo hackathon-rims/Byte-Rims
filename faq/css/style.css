@@ -1,0 +1,227 @@
+/* VARIABLES */
+:root {
+    /* COLOR PRIMARY */
+    /* Text */
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    /* Background gradient */
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    /* COLOR NEUTRAL */
+    /* Text */
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    /* Dividers */
+    --light-grayish-blue: hsl(240, 5%, 91%);
+    /* FONT */
+    --kumbh: 'Kumbh Sans', sans-serif;
+}
+
+/* BASE STYLES */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Kumbh Sans';
+    font-weight: 400;
+    src: url('../fonts/KumbhSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Kumbh Sans';
+    font-weight: 700;
+    src: url('../fonts/KumbhSans-Bold.ttf') format('truetype');
+}
+
+body {
+    font-size: 12px;
+    background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
+    font-family: var(--kumbh);
+    padding-top: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+}
+
+/* MAIN STYLES */
+
+/* Containers */
+.container {
+    width: 87%;
+    max-width: 920px;
+    min-width: 326px;
+    /* This keeps the box illustration on the edge */
+    position: relative;
+}
+
+.faq {
+    margin-top: 8rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 2rem 2rem rgba(29, 30, 53, .3);
+    background: #fff url(../images/bg-pattern-mobile.svg) no-repeat center 0;
+}
+
+@media (min-width: 1100px) {
+    .faq {
+        display: flex;
+        overflow-x: hidden;
+        margin-top: 0;
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+        background: #fff url(../images/bg-pattern-desktop.svg) no-repeat -520px -280px / cover;
+    }
+}
+
+/* Illustrations container */
+.faq__img {
+    display: block;
+    height: 90px;
+}
+
+@media (min-width: 1100px) {
+    .faq__img {
+        width: 50%;
+    }
+}
+
+/* Illustrations */
+.faq__img-box {
+    display: none;
+    position: absolute;
+    left: -90px;
+    top: 180px;
+    z-index: 10;
+}
+
+@media (min-width: 1100px) {
+    .faq__img-box {
+        display: block;
+    }
+}
+
+.faq__img-illustration {
+    position: relative;
+    bottom: 135px;
+    right: 8px;
+}
+
+@media (min-width: 1100px) {
+    .faq__img-illustration {
+        bottom: 0;
+        left: -100px;
+    }
+}
+
+/* Content container */
+@media (min-width: 1100px) {
+    .faq__container {
+        width: 50%;
+        padding-left: 1rem;
+        padding-right: 4.4rem;
+    }
+}
+
+/* FAQ title */
+.faq__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 1100px) {
+    .faq__title {
+        text-align: left;
+    }
+}
+
+/* Question content */
+.faq__content {
+    border-bottom: 1px solid var(--light-grayish-blue);
+    position: relative;
+}
+
+.faq__content:last-child {
+    margin-bottom: 1.5rem;
+}
+
+/* Question styles*/
+.faq__content-question {
+    color: var(--very-dark-grayish-blue);
+    font-size: 13px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: padding-bottom .4s;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq__content-question:hover {
+    color: var(--soft-red);
+    transition: color .2s;
+}
+
+@media (min-width: 1100px) {
+    .faq__content-question {
+        padding-right: 1rem;
+    }
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+/* Magic starts here */
+input[type="checkbox"] {
+    display: none;
+}
+
+input:checked~label .arrow {
+    transform: rotate(180deg);
+}
+
+input:checked~.faq__content-question {
+    font-weight: 700;
+    padding-bottom: 0;
+    transition: padding-bottom .4s;
+}
+
+input:checked~.faq__content-answer {
+    max-height: 54px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    transition: max-height .3s;
+}
+/* End magic */
+
+/* Answer styles */
+.faq__content-answer {
+    color: var(--dark-grayish-blue);
+    margin: 0;
+    width: 90%;
+    max-height: 0;
+    line-height: 1.5;
+    overflow: hidden;
+    transition: max-height .3s;
+}
+
+/* Footer */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.attribution a {
+    color: var(--light-grayish-blue);
+}
